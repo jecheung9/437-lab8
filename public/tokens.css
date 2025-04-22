@@ -1,0 +1,12 @@
+:root {
+    --color-background: #E0FEFD;
+    --color-header: #53B6DE;
+    --color-header-text: #0000DE;
+    --color-link: black;
+    --color-body-text:#1D1BDE;
+
+    --font-header: "Quicksand", sans-serif;
+    --font-body: "Noto Sans Display", sans-serif;
+
+    --spacing-default: 1em;
+}
