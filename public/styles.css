@@ -20,6 +20,7 @@ header {
     background-color: var(--color-header);
     color: var(--color-header-text);
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--spacing-default);
     padding: var(--spacing-default);
@@ -64,3 +65,33 @@ h1, h2 {
 .contact-info dd {
     grid-column: 2;
 }
+
+.menu-button {
+    display: none;
+}
+
+/* .mobile-link {
+    display: none;
+} */
+
+@media (max-width: 600px) {
+    /* for mobile screens */
+
+    /* .desktop-link {
+        display: none;
+    } */
+
+    .menu-button {
+        display: flex;
+        margin-left: auto;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+    }
+
+
+
+}
+
