@@ -1,7 +1,6 @@
 import { toHtmlElement } from "./toHtmlElement.mjs";
 
 function header() {
-    console.log("aaaa");
     let header = document.createElement('header');
     let h1 = document.createElement('h1');
     h1.innerText = "Jeffrey Cheung";
@@ -27,9 +26,17 @@ function header() {
     menubutton.innerText = "Menu"
     menubutton.className = "menu-button"
 
+    let darkmode = toHtmlElement(
+        `<label class="darkmode-label">
+            <input type="checkbox" id="darkmode-checkbox" autocomplete="off" />
+            Dark mode
+        </label>
+        `
+    )
 
     nav.append(links);
     header.append(h1);
+    header.append(darkmode);
     header.append(menubutton);
     header.append(nav);
     document.body.prepend(header);
@@ -65,6 +72,28 @@ function header() {
             nav.style.display = "none";
         }
     });
+
+    let checkbox = document.getElementById("darkmode-checkbox");
+
+
+
+    checkbox.addEventListener("change", (e) => {
+        if (e.target.checked) {
+            document.body.classList.add("dark-mode");
+            localStorage.setItem('darkmode', 'on');
+        } else {
+            document.body.classList.remove("dark-mode");
+            localStorage.setItem('darkmode', 'off');
+        }
+    });
+
+    if (localStorage.getItem('darkmode') === 'on') {
+        document.body.classList.add("dark-mode");
+        checkbox.checked = true;
+    } else {
+        document.body.classList.remove("dark-mode");
+        checkbox.checked = false;
+    }
 }
 
 header();

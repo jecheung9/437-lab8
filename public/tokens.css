@@ -10,3 +10,11 @@
 
     --spacing-default: 1em;
 }
+
+body.dark-mode {
+    --color-background: #02011F;
+    --color-header: #2149A1;
+    --color-header-text: #E8FFFF;
+    --color-link: white;
+    --color-body-text: #21e4e2;
+}
