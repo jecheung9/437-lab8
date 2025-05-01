@@ -35,10 +35,20 @@ function header() {
     )
 
     nav.append(links);
-    header.append(h1);
-    header.append(darkmode);
-    header.append(menubutton);
-    header.append(nav);
+
+    
+    const nameandlinks = document.createElement('div');
+    nameandlinks.className = "name-and-links";
+    nameandlinks.append(h1);
+    nameandlinks.append(nav);
+
+    const darkandmenu = document.createElement('div');
+    darkandmenu.className = "dark-and-menu";
+    darkandmenu.append(darkmode);
+    darkandmenu.append(menubutton);
+
+    header.append(nameandlinks);
+    header.append(darkandmenu);
     document.body.prepend(header);
 
     menubutton.addEventListener("click", () => {

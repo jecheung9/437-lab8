@@ -19,7 +19,6 @@ header {
     background-color: var(--color-header);
     color: var(--color-header-text);
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     gap: var(--spacing-default);
     padding: var(--spacing-default);
@@ -69,23 +68,49 @@ h1, h2 {
     display: none;
 }
 
+.name-and-links {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-default);
+
+}
+
+.dark-and-menu {
+    margin-left: auto;
+    align-self: center;
+}
+
 
 @media (max-width: 600px) {
     /* for mobile screens */
 
-
-    .menu-button {
+    .menu-button { 
         display: flex;
-        /* margin-left: auto; */
     }
 
     nav {
         display: none;
         width: 100%;
+        margin-top: var(--spacing-default);
     }
 
     .darkmode-label {
         margin-left: auto;
     }
+
+    .name-and-links {
+        display: block;
+        gap: var(--spacing-default);
+    }
+
+    .dark-and-menu {
+        display: flex;
+        align-items: center;
+        align-self: baseline;
+        margin-top: 0.5em;
+        gap: 0.5em;
+    }
+
+
 }
 
